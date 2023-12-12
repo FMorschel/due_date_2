@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('LimitedOrEveryHandler', () {
-    final every = Weekday.tuesday.every;
+    final every = Weekday.monday.every;
     final limited = EverySkipInvalidModifier(
       every: every,
       invalidator: const DateValidatorWeekdayCountInMonth(
