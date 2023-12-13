@@ -106,5 +106,7 @@ jobs:
 
     - name: Create PR
       id: create_pr
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         gh pr create --title "Update docs" --body "${{ steps.generate_tag_message.outputs.description }}" --base release --head temp-branch
