@@ -54,7 +54,14 @@ jobs:
 
     - name: Commit changes
       run: |
-        # Commit changes on release
+        # Get the name and email of the last committer
+        last_committer_name=$(git log -1 --pretty=format:'%an')
+        last_committer_email=$(git log -1 --pretty=format:'%ae')
+
+        # Set the local Git config
+        git config --local user.name "$last_committer_name"
+        git config --local user.email "$last_committer_email"
+        
         git checkout release
         git add .
         git commit -m "Update docs" || echo "No changes to commit"
