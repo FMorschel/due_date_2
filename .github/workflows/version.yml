@@ -1,6 +1,9 @@
 name: Update Version
 
 on:
+  pull_request:
+    branches:
+      - release
   push:
     branches:
       - release
