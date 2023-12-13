@@ -9,7 +9,7 @@ on:
       - stable
 
 jobs:
-  build:
+  versioning:
     runs-on: ubuntu-latest
 
     steps:
