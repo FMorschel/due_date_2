@@ -2,7 +2,7 @@ name: Update Docs
 
 on:
   workflow_run:
-    workflows: ["Upload coverage to codecov"]
+    workflows: ["dart-ci"]
     types:
       - completed
   push:
