@@ -5,7 +5,6 @@ version: 2.0.0
 homepage: https://fmorschel.github.io/due_date/
 repository: https://github.com/FMorschel/due_date
 issue_tracker: https://github.com/FMorschel/due_date/issues
-
 funding:
   - https://github.com/sponsors/FMorschel
   - https://www.buymeacoffee.com/fmorschel
