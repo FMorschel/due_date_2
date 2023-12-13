@@ -76,8 +76,10 @@ void main() {
       });
     });
     test('Now', () {
-      Clock.fixed(DateTime(2022));
-      expect(DueDateTime.now(), equals(DateTime.now()));
+      withClock(
+        Clock.fixed(DateTime(2022)),
+        () => expect(DueDateTime.now(), equals(DateTime.now())),
+      );
     });
     group('FromDate:', () {
       final matcher = DateTime.utc(year, 2, 28);
