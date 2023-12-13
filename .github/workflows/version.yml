@@ -22,7 +22,7 @@ jobs:
         version=$(grep 'version:' pubspec.yaml | cut -d ' ' -f 2)
 
         # Get the version from the last commit on release (if it exists)
-        git fetch origin release:release
+        git fetch origin release
 
         # Get the version from the fetched release branch
         last_version=$(git show FETCH_HEAD:pubspec.yaml | grep 'version:' | cut -d ' ' -f 2)
