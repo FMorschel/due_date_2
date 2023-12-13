@@ -1,3 +1,4 @@
+import 'package:clock/clock.dart';
 import 'package:equatable/equatable.dart';
 import 'package:time/time.dart';
 
@@ -171,7 +172,7 @@ class DueDateTime<T extends Every> extends DateTime with EquatableMixin {
     /// The limit for the operations.
     DateTime? limit,
   }) {
-    final now = DateTime.now();
+    final now = clock.now();
     return DueDateTime.fromDate(
       now,
       every: EveryDueDayMonth(now.day) as T,

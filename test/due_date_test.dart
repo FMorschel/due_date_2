@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:clock/clock.dart';
 import 'package:due_date/due_date.dart';
 import 'package:test/test.dart';
@@ -77,8 +79,11 @@ void main() {
     });
     test('Now', () {
       withClock(
-        Clock.fixed(DateTime(2022)),
-        () => expect(DueDateTime.now(), equals(DateTime.now())),
+        Clock.fixed(DateTime.now()),
+        () {
+          print(clock.now());
+          expect(DueDateTime.now(), equals(clock.now()));
+        },
       );
     });
     group('FromDate:', () {

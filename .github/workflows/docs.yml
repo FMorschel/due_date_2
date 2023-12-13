@@ -1,10 +1,6 @@
 name: Update Docs
 
 on:
-  workflow_run:
-    workflows: ["Dart CI"]  # Specify the name of the workflow this depends on
-    types:
-      - completed
   push:
     branches:
       - stable
@@ -18,7 +14,6 @@ on:
 
 jobs:
   update-docs:
-    if: ${{(github.event.workflow_run.conclusion == 'success') || ((github.event_name == 'push') || (github.event_name == 'pull_request'))}}
     runs-on: ubuntu-latest
 
     steps:
