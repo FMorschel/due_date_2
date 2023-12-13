@@ -1,10 +1,7 @@
 name: Update Version
 
 on:
-  workflow_run:
-    workflows: ["Dart CI"]  # Specify the name of the workflow this depends on
-    types:
-      - completed
+  push:
     branches:
       - stable
 
