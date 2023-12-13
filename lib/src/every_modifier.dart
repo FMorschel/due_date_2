@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 
 import '../due_date.dart';
-import 'constants.dart';
 
 /// An enum that represents the direction of the process inside [EveryModifier].
 /// Used on [EveryModifier.processDate].

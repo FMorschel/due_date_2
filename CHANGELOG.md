@@ -1,3 +1,11 @@
+# 2.0.1 - 2023.12.13
+
+- Added more tests for [Every] to make it more robust.
+- Added more tests for [EveryMonth.addMonths] to make it more robust.
+- Resolved inconsistencies in [EveryMonth.addMonths].
+- Added [LimitedOrEveryHandler] to handle [Every] and [Limited] in the same way.
+- Added [DateDirection], and some implementations for the new [EveryModifier].
+
 # 2.0.0 - 2023.03.28
 
 - Added [DateValidator] and some implementations.
