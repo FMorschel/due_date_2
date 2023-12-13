@@ -39,3 +39,18 @@ jobs:
     - name: Filter repo
       run: |
         git filter-repo --path doc/api
+
+  reopen_pr:
+    needs: update_pages
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+    - name: Reopen PR
+      run: |
+        PR_NUMBER=${{ github.event.pull_request.number }}
+        curl \
+          -X PATCH \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER \
+          -d '{"state":"open"}'
