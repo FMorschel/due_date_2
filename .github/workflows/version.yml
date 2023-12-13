@@ -54,11 +54,11 @@ jobs:
 
     - name: Commit changes
       run: |
+        # Commit changes on release
+        git checkout release
         git add .
         git commit -m "Update docs" || echo "No changes to commit"
-
-    - name: Push changes
-      run: git push
+        git push
 
     - name: Setup reviewdog
       uses: reviewdog/action-setup@v1
