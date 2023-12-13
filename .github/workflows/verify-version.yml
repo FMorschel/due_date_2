@@ -37,6 +37,16 @@ jobs:
         if grep -q "$version" README.md && grep -q "$version" CHANGELOG.md; then
           echo "Version number found in README.md and CHANGELOG.md"
         else
-          echo "Version number not found in README.md or CHANGELOG.md"
+          if grep -q "$version" README.md; then
+            echo "Version number found in README.md"
+          else
+            echo "Version number not found in README.md"
+          fi
+
+          if grep -q "$version" CHANGELOG.md; then
+            echo "Version number found in CHANGELOG.md"
+          else
+            echo "Version number not found in CHANGELOG.md"
+          fi
           exit 1
         fi
