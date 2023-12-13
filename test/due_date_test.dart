@@ -1,6 +1,6 @@
+import 'package:clock/clock.dart';
 import 'package:due_date/due_date.dart';
 import 'package:test/test.dart';
-import 'package:clock/clock.dart';
 
 void main() {
   const dueDay15 = EveryDueDayMonth(15);
