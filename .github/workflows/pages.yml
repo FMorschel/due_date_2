@@ -1,0 +1,41 @@
+name: Update Pages
+
+on:
+  pull_request:
+    types: 
+      - closed
+
+jobs:
+  update_pages:
+    runs-on: ubuntu-latest
+    if: (github.event.pull_request.merged == true) && (github.event.pull_request.base.ref == 'release') && (github.event.pull_request.title == 'Update docs')
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install git-filter-repo
+      run: sudo apt-get install -y git-filter-repo
+
+    - name: Switch to gh-pages and replace contents
+      run: |
+
+        # Get the name and email of the last committer
+        last_committer_name=$(git log -1 --pretty=format:'%an')
+        last_committer_email=$(git log -1 --pretty=format:'%ae')
+
+        # Set the local Git config
+        git config --local user.name "$last_committer_name"
+        git config --local user.email "$last_committer_email"
+
+        git checkout gh-pages
+        git rm -r -f .
+        git checkout HEAD -- doc/api
+        mv doc/api/* .
+        git add .
+        git commit -m "Update gh-pages" || echo "No changes to commit"
+        git push
+
+    - name: Filter repo
+      run: |
+        git filter-repo --path doc/api

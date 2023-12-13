@@ -1,0 +1,31 @@
+
+name: Create Release and Tag
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  create_release_and_tag:
+    runs-on: ubuntu-latest
+    if: (github.event.pull_request.merged == true) && (github.event.pull_request.base.ref == 'release') && (github.event.pull_request.title == 'Update docs')
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Create draft release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.event.pull_request.head.ref }}
+        release_name: Release ${{ github.event.pull_request.head.ref }}
+        body: ${{ github.event.pull_request.body }}
+        draft: true
+
+    - name: Create tag with version number
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git tag -a ${{ github.event.pull_request.head.ref }} -m "${{ github.event.pull_request.body }}"
+        git push origin ${{ github.event.pull_request.head.ref }}

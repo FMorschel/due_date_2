@@ -1,0 +1,42 @@
+name: Verify Version
+
+on:
+  pull_request:
+    branches:
+      - release
+
+jobs:
+  verify_version:
+    if: (github.event.pull_request.title != 'Update docs')
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Validate version
+      run: |
+        # Extract version from pubspec.yaml
+        version=$(grep 'version:' pubspec.yaml | cut -d ' ' -f 2)
+
+        # Get the version from the last commit on release (if it exists)
+        git fetch origin release
+
+        # Get the version from the fetched release branch
+        last_version=$(git show FETCH_HEAD:pubspec.yaml | grep 'version:' | cut -d ' ' -f 2)
+
+        # Check if the versions are different
+        if [ "$version" != "$last_version" ]; then
+          echo "Version has been updated to $version"
+        else
+          echo "Version has not been updated"
+          exit 1
+        fi
+
+        # Check if README.md and CHANGELOG.md contain the new version number
+        if grep -q "$version" README.md && grep -q "$version" CHANGELOG.md; then
+          echo "Version number found in README.md and CHANGELOG.md"
+        else
+          echo "Version number not found in README.md or CHANGELOG.md"
+          exit 1
+        fi
