@@ -46,32 +46,6 @@ jobs:
           exit 1
         fi
 
-    - name: Delete docs directory
-      run: rm -rf docs/*
-
-    - name: Generate docs
-      run: dart doc
-
-    - name: Commit changes
-      run: |
-        # Get the name and email of the last committer
-        last_committer_name=$(git log -1 --pretty=format:'%an')
-        last_committer_email=$(git log -1 --pretty=format:'%ae')
-
-        # Set the local Git config
-        git config --local user.name "$last_committer_name"
-        git config --local user.email "$last_committer_email"
-        
-        git checkout release
-        git add .
-        git commit -m "Update docs" || echo "No changes to commit"
-        git push
-
-    - name: Setup reviewdog
-      uses: reviewdog/action-setup@v1
-      with:
-        reviewdog_version: latest
-
     - name: Generate tag message
       id: generate_tag_message
       env:
@@ -106,24 +80,25 @@ jobs:
         DESCRIPTION="What's Changed\n$WHATS_CHANGED\nNew Contributors\n$NEW_CONTRIBUTORS\nFull Changelog: $LAST_VERSION...$VERSION_NUMBER"
         echo "::set-output name=description::$DESCRIPTION"
 
-    - name: Review tag message
+    - name: Update docs
       run: |
-        echo "${{ steps.generate_tag_message.outputs.description }}" | reviewdog -f=diff -diff="git diff" -reporter=github-pr-review
+        rm -rf doc/*
+        dart doc
 
-    - name: Create tag with version number
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Get the name and email of the last committer
+        last_committer_name=$(git log -1 --pretty=format:'%an')
+        last_committer_email=$(git log -1 --pretty=format:'%ae')
+
+        # Set the local Git config
+        git config --local user.name "$last_committer_name"
+        git config --local user.email "$last_committer_email"
+
+        git checkout -b temp-branch
+        git add .
+        git commit -m "Update docs" || echo "No changes to commit"
+        git push origin temp-branch
+
+    - name: Create PR
+      id: create_pr
       run: |
-        git tag -a $VERSION_NUMBER -m "${{ steps.generate_tag_message.outputs.description }}"
-        git push origin $VERSION_NUMBER
-
-    - name: Create draft release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ steps.generate_tag_message.outputs.version_number }}
-        release_name: Release ${{ steps.generate_tag_message.outputs.version_number }}
-        body: ${{ steps.generate_tag_message.outputs.description }}
-        draft: true
+        gh pr create --title "Update docs" --body "${{ steps.generate_tag_message.outputs.description }}" --base release --head temp-branch
