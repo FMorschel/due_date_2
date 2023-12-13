@@ -21,9 +21,11 @@ jobs:
         # Extract version from pubspec.yaml
         version=$(grep 'version:' pubspec.yaml | cut -d ' ' -f 2)
 
-        # Get the version from the last commit on release (if it exists)
-        git fetch origin release:release
-        last_version=$(git show release:pubspec.yaml | grep 'version:' | cut -d ' ' -f 2)
+        # Create a temporary branch and fetch the release branch into it
+        git checkout -b temp
+        git fetch origin release:temp
+        last_version=$(git show temp:pubspec.yaml | grep 'version:' | cut -d ' ' -f 2)
+        git checkout -
 
         # Check if the versions are different
         if [ "$version" != "$last_version" ]; then
