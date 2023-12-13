@@ -2,14 +2,12 @@ name: Update Version
 
 on:
   pull_request:
-    branches:
-      - release
-  push:
-      branches:
-        - release
+    types:
+      - closed
 
 jobs:
-  versioning:
+  update_docs_new_version:
+    if: (github.event.pull_request.merged == true) && (github.event.pull_request.base.ref == 'release') && (github.event.pull_request.title != 'Update docs')
     runs-on: ubuntu-latest
 
     steps:
@@ -87,6 +85,7 @@ jobs:
         echo "::set-output name=description::$DESCRIPTION"
 
     - name: Update docs
+      id: update_docs
       run: |
         rm -rf doc/*
         dart doc
@@ -99,14 +98,18 @@ jobs:
         git config --local user.name "$last_committer_name"
         git config --local user.email "$last_committer_email"
 
-        git checkout -b temp-branch
+        # Create a unique branch name using the current timestamp
+        branch_name="temp-branch-$(date +%s)"
+        echo "::set-output name=branch_name::$branch_name"
+
+        git checkout -b $branch_name
         git add .
         git commit -m "Update docs" || echo "No changes to commit"
-        git push origin temp-branch
+        echo "Version: $version"
+        git push origin $branch_name
 
     - name: Create PR
-      id: create_pr
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        gh pr create --title "Update docs" --body "${{ steps.generate_tag_message.outputs.description }}" --base release --head temp-branch
+        gh pr create --title "Update docs" --body "${{ steps.generate_tag_message.outputs.description }}" --base release --head ${{ steps.update_docs.outputs.branch_name }}

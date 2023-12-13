@@ -2,7 +2,8 @@ name: Update Pages
 
 on:
   pull_request:
-    types: [closed]
+    types: 
+      - closed
 
 jobs:
   update_pages:
