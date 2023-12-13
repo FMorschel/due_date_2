@@ -1,8 +1,6 @@
 name: Update Version
 
 on:
-  branch_protection_rule:
-    types: [created, edited]
   workflow_run:
     workflows: ["Dart CI"]  # Specify the name of the workflow this depends on
     types:
