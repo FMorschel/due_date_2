@@ -39,3 +39,36 @@ jobs:
     - name: Filter repo
       run: |
         git filter-repo --path doc/api
+
+  reopen_pr:
+    needs: update_pages
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: 'release'
+          fetch-depth: 0
+
+      - name: Revert Merge Commit
+        run: |
+          # Get the name and email of the last committer
+          last_committer_name=$(git log -1 --pretty=format:'%an')
+          last_committer_email=$(git log -1 --pretty=format:'%ae')
+
+          # Set the local Git config
+          git config --local user.name "$last_committer_name"
+          git config --local user.email "$last_committer_email"
+
+          git revert -m 1 HEAD
+          git push origin HEAD:revert-${{ github.run_number }}
+
+      - name: Create PR
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: "revert-${{ github.run_number }}"
+          destination_branch: "release"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Revert failed update"
+          pr_body: "This PR reverts the changes made in PR #${{ github.event.pull_request.number }} due to a failure in the update_docs_new_version job."

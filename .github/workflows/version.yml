@@ -137,6 +137,14 @@ jobs:
 
       - name: Revert Merge Commit
         run: |
+          # Get the name and email of the last committer
+          last_committer_name=$(git log -1 --pretty=format:'%an')
+          last_committer_email=$(git log -1 --pretty=format:'%ae')
+
+          # Set the local Git config
+          git config --local user.name "$last_committer_name"
+          git config --local user.email "$last_committer_email"
+
           git revert -m 1 HEAD
           git push origin HEAD:revert-${{ github.run_number }}
 
