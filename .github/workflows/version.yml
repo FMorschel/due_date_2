@@ -123,3 +123,29 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         gh pr create --title "Update docs" --body "${{ steps.generate_tag_message.outputs.description }}" --base release --head ${{ steps.update_docs.outputs.branch_name }}
+
+  reopen_pr:
+    needs: update_docs_new_version
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: 'release'
+          fetch-depth: 0
+
+      - name: Revert Merge Commit
+        run: |
+          git revert -m 1 HEAD
+          git push origin HEAD:revert-${{ github.run_number }}
+
+      - name: Create PR
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: "revert-${{ github.run_number }}"
+          destination_branch: "release"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Revert failed update"
+          pr_body: "This PR reverts the changes made in PR #${{ github.event.pull_request.number }} due to a failure in the update_docs_new_version job."
+
