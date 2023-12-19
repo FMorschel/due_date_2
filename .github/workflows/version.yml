@@ -146,7 +146,7 @@ jobs:
           git config --local user.email "$last_committer_email"
 
           git revert -m 1 HEAD
-          git push origin HEAD:revert-${{ github.run_number }}
+          git push origin --force HEAD:revert-${{ github.run_number }}
 
       - name: Create PR
         uses: repo-sync/pull-request@v2
