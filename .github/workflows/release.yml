@@ -27,6 +27,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        exit 1
         git tag -a ${{ github.event.pull_request.head.ref }} -m "${{ github.event.pull_request.body }}"
         git push origin ${{ github.event.pull_request.head.ref }}
 
