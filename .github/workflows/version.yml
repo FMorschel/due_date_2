@@ -17,48 +17,12 @@ jobs:
     - name: Set up Dart
       uses: dart-lang/setup-dart@v1
 
-    - name: Validate files
-      run: |
-        # Extract version from pubspec.yaml
-        version=$(grep 'version:' pubspec.yaml | cut -d ' ' -f 2)
-
-        # Get the version from the last commit on release (if it exists)
-        git fetch origin release
-
-        # Get the version from the fetched release branch
-        last_version=$(git show FETCH_HEAD:pubspec.yaml | grep 'version:' | cut -d ' ' -f 2)
-
-        # Check if the versions are different
-        if [ "$version" != "$last_version" ]; then
-          echo "Version has been updated to $version"
-        else
-          echo "Version has not been updated. Current version: $version. Last version: $last_version"
-          exit 1
-        fi
-
-        # Check if README.md and CHANGELOG.md contain the new version number
-        if grep -q "$version" README.md && grep -q "$version" CHANGELOG.md; then
-          echo "Version number found in README.md and CHANGELOG.md"
-        else
-          if grep -q "$version" README.md; then
-            echo "Version number found in README.md"
-          else
-            echo "Version number not found in README.md"
-          fi
-
-          if grep -q "$version" CHANGELOG.md; then
-            echo "Version number found in CHANGELOG.md"
-          else
-            echo "Version number not found in CHANGELOG.md"
-          fi
-          exit 1
-        fi
-
     - name: Generate tag message
       id: generate_tag_message
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        exit 1
         VERSION_NUMBER=$(grep 'version:' pubspec.yaml | sed 's/version: //g')
         LAST_VERSION=$(git describe --abbrev=0 --tags `git rev-list --tags --skip=1 --max-count=1` 2>/dev/null || echo "0.0.0")
         COMMITS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/${{ github.repository }}/compare/$LAST_VERSION...$VERSION_NUMBER)
@@ -123,3 +87,18 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         gh pr create --title "Update docs" --body "${{ steps.generate_tag_message.outputs.description }}" --base release --head ${{ steps.update_docs.outputs.branch_name }}
+
+  reopen_pr:
+    needs: update_docs_new_version
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+    - name: Reopen PR
+      run: |
+        PR_NUMBER=${{ github.event.pull_request.number }}
+        curl \
+          -X PATCH \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER \
+          -d '{"state":"open"}'

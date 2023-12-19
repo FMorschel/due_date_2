@@ -27,5 +27,21 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        exit 1
         git tag -a ${{ github.event.pull_request.head.ref }} -m "${{ github.event.pull_request.body }}"
         git push origin ${{ github.event.pull_request.head.ref }}
+
+  reopen_pr:
+    needs: create_release_and_tag
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+    - name: Reopen PR
+      run: |
+        PR_NUMBER=${{ github.event.pull_request.number }}
+        curl \
+          -X PATCH \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER \
+          -d '{"state":"open"}'
