@@ -64,22 +64,22 @@
 <section class="desc markdown">
   <p>Support for creating your own custom due dates.</p>
 <p>This package is used to create custom due dates.</p>
-<p>Implementing your own <a href="../due_date/DueDateTime-class.html">DueDateTime</a> is easy. You implement an <a href="../due_date/Every-class.html">Every</a>
-class and pass it to the <a href="../due_date/DueDateTime-class.html">DueDateTime</a> constructor.</p>
-<p>There are already some <a href="../due_date/Every-class.html">Every</a> classes implemented in this package. Look for
-<a href="../due_date/EveryWeekday-class.html">EveryWeekday</a>, <a href="../due_date/EveryDueDayMonth-class.html">EveryDueDayMonth</a>, <a href="../due_date/EveryWeekdayCountInMonth-class.html">EveryWeekdayCountInMonth</a> (or
-<a href="../due_date/WeekdayOccurrence.html">WeekdayOccurrence</a>s constants) and <a href="../due_date/EveryDayInYear-class.html">EveryDayInYear</a>.</p>
-<p>The <a href="../due_date/Every-class.html">Every</a> class is a base class that processes all the base operations for
-<a href="../due_date/DueDateTime-class.html">DueDateTime</a>. You can mix in one of the folowing mixins:</p>
+<p>Implementing your own <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date/DueDateTime-class.html">DueDateTime</a> is easy. You implement an <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/Every-class.html">Every</a>
+class and pass it to the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date/DueDateTime-class.html">DueDateTime</a> constructor.</p>
+<p>There are already some <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/Every-class.html">Every</a> classes implemented in this package. Look for
+<a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryWeekday-class.html">EveryWeekday</a>, <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDueDayMonth-class.html">EveryDueDayMonth</a>, <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryWeekdayCountInMonth-class.html">EveryWeekdayCountInMonth</a> (or
+<a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_enums/WeekdayOccurrence.html">WeekdayOccurrence</a>s constants) and <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDayInYear-class.html">EveryDayInYear</a>.</p>
+<p>The <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/Every-class.html">Every</a> class is a base class that processes all the base operations for
+<a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date/DueDateTime-class.html">DueDateTime</a>. You can mix in one of the following mixins:</p>
 <ul>
-<li><a href="../due_date/EveryWeek-mixin.html">EveryWeek</a>;</li>
-<li><a href="../due_date/EveryMonth-mixin.html">EveryMonth</a>;</li>
-<li><a href="../due_date/EveryYear-mixin.html">EveryYear</a>;</li>
+<li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryWeek-mixin.html">EveryWeek</a>;</li>
+<li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryMonth-mixin.html">EveryMonth</a>;</li>
+<li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryYear-mixin.html">EveryYear</a>;</li>
 </ul>
 <p>And if you want to be more specific, implement the others.</p>
 <p>WARNING: If you mix in two of the above mixins, the order in which you mix
 them in is important. The last mixin you mix in will be the one that is
-used for <a href="../due_date/DueDateTime/next.html">DueDateTime.next</a> and <a href="../due_date/DueDateTime/previous.html">DueDateTime.previous</a> on the <a href="../due_date/DueDateTime-class.html">DueDateTime</a>
+used for <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date/DueDateTime/next.html">DueDateTime.next</a> and <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date/DueDateTime/previous.html">DueDateTime.previous</a> on the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date/DueDateTime-class.html">DueDateTime</a>
 class.</p>
 </section>
 
@@ -89,176 +89,186 @@ class.</p>
 
       <dl>
         <dt id="DateValidator">
-  <span class="name "><a href="../due_date/DateValidator-class.html">DateValidator</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a></span> 
 
 </dt>
 <dd>
-  A class to save a specific validation for a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a>.
+  A class to save a specific validation for a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a>.
 </dd>
 
         <dt id="DateValidatorDayInYear">
-  <span class="name "><a href="../due_date/DateValidatorDayInYear-class.html">DateValidatorDayInYear</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorDayInYear-class.html">DateValidatorDayInYear</a></span> 
 
 </dt>
 <dd>
-  A <a href="../due_date/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> if the <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime/day.html">DateTime.day</a> is the
-<a href="../due_date/DateValidatorDayInYear/dayInYear.html">dayInYear</a> of the year.
+  A <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> if the <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime/day.html">DateTime.day</a> is the
+<a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorDayInYear/dayInYear.html">dayInYear</a> of the year.
 </dd>
 
         <dt id="DateValidatorDifference">
-  <span class="name "><a href="../due_date/DateValidatorDifference-class.html">DateValidatorDifference</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../due_date/DateValidator-class.html">DateValidator</a></span>&gt;</span></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorDifference-class.html">DateValidatorDifference</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a></span>&gt;</span></span> 
 
 </dt>
 <dd>
-  A <a href="../due_date/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> if the date is valid for only
-one of the <a href="../due_date/DateValidatorListMixin/validators.html">validators</a>.
+  A <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> if the date is valid for only
+one of the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorListMixin/validators.html">validators</a>.
 </dd>
 
         <dt id="DateValidatorDueDayMonth">
-  <span class="name "><a href="../due_date/DateValidatorDueDayMonth-class.html">DateValidatorDueDayMonth</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorDueDayMonth-class.html">DateValidatorDueDayMonth</a></span> 
 
 </dt>
 <dd>
-  A <a href="../due_date/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> if the <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime/day.html">DateTime.day</a> is the
-same value as <a href="../due_date/DateValidatorDueDayMonth/dueDay.html">dueDay</a>.
-If <a href="../due_date/DateValidatorDueDayMonth/exact.html">exact</a> is false, and the <a href="../due_date/DateValidatorDueDayMonth/dueDay.html">dueDay</a> is greater than the days in month,
-the <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> will be valid if the <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime/day.html">DateTime.day</a> is the last day of the
+  A <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> if the <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime/day.html">DateTime.day</a> is the
+same value as <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorDueDayMonth/dueDay.html">dueDay</a>.
+If <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorDueDayMonth/exact.html">exact</a> is false, and the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorDueDayMonth/dueDay.html">dueDay</a> is greater than the days in month,
+the <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> will be valid if the <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime/day.html">DateTime.day</a> is the last day of the
 month.
 </dd>
 
         <dt id="DateValidatorIntersection">
-  <span class="name "><a href="../due_date/DateValidatorIntersection-class.html">DateValidatorIntersection</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../due_date/DateValidator-class.html">DateValidator</a></span>&gt;</span></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorIntersection-class.html">DateValidatorIntersection</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a></span>&gt;</span></span> 
 
 </dt>
 <dd>
-  A <a href="../due_date/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> if the date is valid for all
-of the <a href="../due_date/DateValidatorListMixin/validators.html">validators</a>.
+  A <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> if the date is valid for all
+of the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorListMixin/validators.html">validators</a>.
 </dd>
 
         <dt id="DateValidatorUnion">
-  <span class="name "><a href="../due_date/DateValidatorUnion-class.html">DateValidatorUnion</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../due_date/DateValidator-class.html">DateValidator</a></span>&gt;</span></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorUnion-class.html">DateValidatorUnion</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a></span>&gt;</span></span> 
 
 </dt>
 <dd>
-  A <a href="../due_date/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> if the date is valid for any
-of the <a href="../due_date/DateValidatorListMixin/validators.html">validators</a>.
+  A <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> if the date is valid for any
+of the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorListMixin/validators.html">validators</a>.
 </dd>
 
         <dt id="DateValidatorWeekday">
-  <span class="name "><a href="../due_date/DateValidatorWeekday-class.html">DateValidatorWeekday</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorWeekday-class.html">DateValidatorWeekday</a></span> 
 
 </dt>
 <dd>
-  A <a href="../due_date/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> if it is on the given
-<a href="../due_date/DateValidatorWeekday/weekday.html">weekday</a>.
+  A <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> if it is on the given
+<a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorWeekday/weekday.html">weekday</a>.
 </dd>
 
         <dt id="DateValidatorWeekdayCountInMonth">
-  <span class="name "><a href="../due_date/DateValidatorWeekdayCountInMonth-class.html">DateValidatorWeekdayCountInMonth</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorWeekdayCountInMonth-class.html">DateValidatorWeekdayCountInMonth</a></span> 
 
 </dt>
 <dd>
-  A <a href="../due_date/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> if the <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime/day.html">DateTime.day</a> is the
-<a href="../due_date/DateValidatorWeekdayCountInMonth/day.html">day</a> of the week and is the <a href="../due_date/DateValidatorWeekdayCountInMonth/week.html">week</a> of the month.
+  A <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a> that validates a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> if the <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime/day.html">DateTime.day</a> is the
+<a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorWeekdayCountInMonth/day.html">day</a> of the week and is the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorWeekdayCountInMonth/week.html">week</a> of the month.
 </dd>
 
         <dt id="DueDateTime">
-  <span class="name "><a href="../due_date/DueDateTime-class.html">DueDateTime</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="../due_date/Every-class.html">Every</a></span>&gt;</span></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date/DueDateTime-class.html">DueDateTime</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/Every-class.html">Every</a></span>&gt;</span></span> 
 
 </dt>
 <dd>
-  Wrapper for <a href="../due_date/Every-class.html">Every</a> and <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> to represent a due date.
+  Wrapper for <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/Every-class.html">Every</a> and <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> to represent a due date.
 </dd>
 
         <dt id="Every">
-  <span class="name "><a href="../due_date/Every-class.html">Every</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/Every-class.html">Every</a></span> 
 
 </dt>
 <dd>
-  Abstract class that, when extended, processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> with custom logic.
+  Abstract class that, when extended, processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> with custom logic.
 </dd>
 
         <dt id="EveryDateValidator">
-  <span class="name "><a href="../due_date/EveryDateValidator-class.html">EveryDateValidator</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidator-class.html">EveryDateValidator</a></span> 
 
 </dt>
 <dd>
-  A base class that represents an <a href="../due_date/Every-class.html">Every</a> with a <a href="../due_date/DateValidator-class.html">DateValidator</a>.
+  A base class that represents an <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/Every-class.html">Every</a> with a <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a>.
 </dd>
 
         <dt id="EveryDateValidatorDifference">
-  <span class="name "><a href="../due_date/EveryDateValidatorDifference-class.html">EveryDateValidatorDifference</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../due_date/EveryDateValidator-class.html">EveryDateValidator</a></span>&gt;</span></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidatorDifference-class.html">EveryDateValidatorDifference</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidator-class.html">EveryDateValidator</a></span>&gt;</span></span> 
 
 </dt>
 <dd>
-  Class that processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../due_date/EveryDateValidatorDifference/next.html">next</a> always returns the next
-day where only one of the <a href="../due_date/EveryDateValidator-class.html">EveryDateValidator</a>s conditions is met.
+  Class that processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidatorDifference/next.html">next</a> always returns the next
+day where only one of the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidator-class.html">EveryDateValidator</a>s conditions is met.
 </dd>
 
         <dt id="EveryDateValidatorIntersection">
-  <span class="name "><a href="../due_date/EveryDateValidatorIntersection-class.html">EveryDateValidatorIntersection</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../due_date/EveryDateValidator-class.html">EveryDateValidator</a></span>&gt;</span></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidatorIntersection-class.html">EveryDateValidatorIntersection</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidator-class.html">EveryDateValidator</a></span>&gt;</span></span> 
 
 </dt>
 <dd>
-  Class that processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../due_date/EveryDateValidatorIntersection/next.html">next</a> always returns the next
-day where all of the <a href="../due_date/EveryDateValidator-class.html">EveryDateValidator</a>s conditions are met.
+  Class that processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidatorIntersection/next.html">next</a> always returns the next
+day where all of the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidator-class.html">EveryDateValidator</a>s conditions are met.
 </dd>
 
         <dt id="EveryDateValidatorUnion">
-  <span class="name "><a href="../due_date/EveryDateValidatorUnion-class.html">EveryDateValidatorUnion</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../due_date/EveryDateValidator-class.html">EveryDateValidator</a></span>&gt;</span></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidatorUnion-class.html">EveryDateValidatorUnion</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidator-class.html">EveryDateValidator</a></span>&gt;</span></span> 
 
 </dt>
 <dd>
-  Class that processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../due_date/EveryDateValidatorUnion/next.html">next</a> always returns the next
-day where any of the <a href="../due_date/EveryDateValidator-class.html">EveryDateValidator</a>s conditions are met.
+  Class that processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidatorUnion/next.html">next</a> always returns the next
+day where any of the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidator-class.html">EveryDateValidator</a>s conditions are met.
 </dd>
 
         <dt id="EveryDayInYear">
-  <span class="name "><a href="../due_date/EveryDayInYear-class.html">EveryDayInYear</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDayInYear-class.html">EveryDayInYear</a></span> 
 
 </dt>
 <dd>
-  Class that processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../due_date/EveryDayInYear/addYears.html">addYears</a> always returns the
+  Class that processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDayInYear/addYears.html">addYears</a> always returns the
 next day where the difference in days between the date and the first day of
-the year is equal to the <a href="../due_date/DateValidatorDayInYear/dayInYear.html">dayInYear</a>.
+the year is equal to the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorDayInYear/dayInYear.html">dayInYear</a>.
 </dd>
 
         <dt id="EveryDueDayMonth">
-  <span class="name "><a href="../due_date/EveryDueDayMonth-class.html">EveryDueDayMonth</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDueDayMonth-class.html">EveryDueDayMonth</a></span> 
 
 </dt>
 <dd>
-  Class that processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../due_date/EveryDueDayMonth/addMonths.html">addMonths</a> always returns the
-next month's with the <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime/day.html">DateTime.day</a> as the <a href="../due_date/DateValidatorDueDayMonth/dueDay.html">dueDay</a> clamped to fit in the
+  Class that processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDueDayMonth/addMonths.html">addMonths</a> always returns the
+next month's with the <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime/day.html">DateTime.day</a> as the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorDueDayMonth/dueDay.html">dueDay</a> clamped to fit in the
 length of the next month.
 </dd>
 
         <dt id="EveryWeekday">
-  <span class="name "><a href="../due_date/EveryWeekday-class.html">EveryWeekday</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryWeekday-class.html">EveryWeekday</a></span> 
 
 </dt>
 <dd>
-  Class that processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../due_date/EveryWeekday/addWeeks.html">addWeeks</a> always returns the
-next week's with the <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime/weekday.html">DateTime.weekday</a> equals to the <a href="../due_date/DateValidatorWeekday/weekday.html">weekday</a>.
+  Class that processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryWeekday/addWeeks.html">addWeeks</a> always returns the
+next week's with the <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime/weekday.html">DateTime.weekday</a> equals to the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorWeekday/weekday.html">weekday</a>.
 </dd>
 
         <dt id="EveryWeekdayCountInMonth">
-  <span class="name "><a href="../due_date/EveryWeekdayCountInMonth-class.html">EveryWeekdayCountInMonth</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryWeekdayCountInMonth-class.html">EveryWeekdayCountInMonth</a></span> 
 
 </dt>
 <dd>
-  Class that processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../due_date/EveryWeekdayCountInMonth/addMonths.html">addMonths</a> always returns the
-next month's with the <a href="../due_date/DateValidatorWeekdayCountInMonth/week.html">week</a> occurence of the <a href="../due_date/DateValidatorWeekdayCountInMonth/day.html">day</a> (<a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime/weekday.html">DateTime.weekday</a>
-is the <a href="../due_date/DateValidatorWeekdayCountInMonth/day.html">day</a>'s <a href="../period/Weekday/dateTimeValue.html">Weekday.dateTimeValue</a>).
+  Class that processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> so that the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryWeekdayCountInMonth/addMonths.html">addMonths</a> always returns the
+next month's with the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorWeekdayCountInMonth/week.html">week</a> occurrence of the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorWeekdayCountInMonth/day.html">day</a> (<a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime/weekday.html">DateTime.weekday</a>
+is the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorWeekdayCountInMonth/day.html">day</a>'s <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_enums/Weekday/dateTimeValue.html">Weekday.dateTimeValue</a>).
 </dd>
 
         <dt id="LimitedEvery">
-  <span class="name "><a href="../due_date/LimitedEvery-class.html">LimitedEvery</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/LimitedEvery-class.html">LimitedEvery</a></span> 
 
 </dt>
 <dd>
-  Abstract class that forces the implementation of <a href="../due_date/Every-class.html">Every</a> to have a
-limit parameter for the <a href="../due_date/LimitedEvery/startDate.html">startDate</a>, <a href="../due_date/LimitedEvery/next.html">next</a> and <a href="../due_date/LimitedEvery/previous.html">previous</a> methods.
+  Abstract class that forces the implementation of <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/Every-class.html">Every</a> to have a
+limit parameter for the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/LimitedEvery/startDate.html">startDate</a>, <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/LimitedEvery/next.html">next</a> and <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/LimitedEvery/previous.html">previous</a> methods.
+</dd>
+
+        <dt id="LimitedOrEveryHandler">
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_constants/LimitedOrEveryHandler-class.html">LimitedOrEveryHandler</a></span> 
+
+</dt>
+<dd>
+  Simple class to delegate the work to a given <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/Every-class.html">Every</a> base process.
+For every one one of the everies that is a <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/LimitedEvery-class.html">LimitedEvery</a>, the limit
+will be passed.
 </dd>
 
       </dl>
@@ -269,51 +279,53 @@ limit parameter for the <a href="../due_date/LimitedEvery/startDate.html">startD
 
       <dl>
         <dt id="DateValidatorListMixin">
-  <span class="name "><a href="../due_date/DateValidatorListMixin-mixin.html">DateValidatorListMixin</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../due_date/DateValidator-class.html">DateValidator</a></span>&gt;</span></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorListMixin-mixin.html">DateValidatorListMixin</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a></span>&gt;</span></span> 
 
 </dt>
 <dd>
-  Mixin that represents a list of <a href="../due_date/DateValidator-class.html">DateValidator</a>s.
+  Mixin that represents a list of <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a>s.
 </dd>
 
         <dt id="DateValidatorMixin">
-  <span class="name "><a href="../due_date/DateValidatorMixin-mixin.html">DateValidatorMixin</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorMixin-mixin.html">DateValidatorMixin</a></span> 
 
 </dt>
 <dd>
-  Mixin to easily implement the <a href="../due_date/DateValidator/validsIn.html">DateValidator.validsIn</a> method.
+  Mixin to easily implement the <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator/invalid.html">DateValidator.invalid</a>,
+<a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator/filterValidDates.html">DateValidator.filterValidDates</a> and <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator/filterValidDates.html">DateValidator.filterValidDates</a>
+methods.
 </dd>
 
         <dt id="EveryDateValidatorListMixin">
-  <span class="name "><a href="../due_date/EveryDateValidatorListMixin-mixin.html">EveryDateValidatorListMixin</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../due_date/EveryDateValidator-class.html">EveryDateValidator</a></span>&gt;</span></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidatorListMixin-mixin.html">EveryDateValidatorListMixin</a><span class="signature">&lt;<wbr><span class="type-parameter">E extends <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidator-class.html">EveryDateValidator</a></span>&gt;</span></span> 
 
 </dt>
 <dd>
-  Mixin that represents a list of <a href="../due_date/EveryDateValidator-class.html">EveryDateValidator</a>.
+  Mixin that represents a list of <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidator-class.html">EveryDateValidator</a>.
 </dd>
 
         <dt id="EveryMonth">
-  <span class="name "><a href="../due_date/EveryMonth-mixin.html">EveryMonth</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryMonth-mixin.html">EveryMonth</a></span> 
 
 </dt>
 <dd>
-  Processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> with custom logic.
+  Processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> with custom logic.
 </dd>
 
         <dt id="EveryWeek">
-  <span class="name "><a href="../due_date/EveryWeek-mixin.html">EveryWeek</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryWeek-mixin.html">EveryWeek</a></span> 
 
 </dt>
 <dd>
-  Processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> with custom logic.
+  Processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> with custom logic.
 </dd>
 
         <dt id="EveryYear">
-  <span class="name "><a href="../due_date/EveryYear-mixin.html">EveryYear</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryYear-mixin.html">EveryYear</a></span> 
 
 </dt>
 <dd>
-  Processes <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a> with custom logic.
+  Processes <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a> with custom logic.
 </dd>
 
       </dl>
@@ -324,70 +336,70 @@ limit parameter for the <a href="../due_date/LimitedEvery/startDate.html">startD
 
       <dl>
         <dt id="AddDays">
-    <span class="name "><a href="../due_date/AddDays.html">AddDays</a></span> 
+    <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions/AddDays.html">AddDays</a></span> 
 
 </dt>
 <dd>
-    Extension methods related to adding or subtracting days from a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a>.
+    Extension methods related to adding or subtracting days from a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a>.
 </dd>
 
 
         <dt id="ClampInMonth">
-    <span class="name "><a href="../due_date/ClampInMonth.html">ClampInMonth</a></span> 
+    <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions/ClampInMonth.html">ClampInMonth</a></span> 
 
 </dt>
 <dd>
-    Extension methods related to clamping months on <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a>.
+    Extension methods related to clamping months on <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a>.
 </dd>
 
 
         <dt id="DateValidatorListExt">
-    <span class="name "><a href="../due_date/DateValidatorListExt.html">DateValidatorListExt</a></span> 
+    <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions/DateValidatorListExt.html">DateValidatorListExt</a></span> 
 
 </dt>
 <dd>
-    Extension methods related to <a href="../due_date/DateValidator-class.html">DateValidator</a>s. Simpply wrappers around
-creating <a href="../due_date/DateValidatorIntersection-class.html">DateValidatorIntersection</a>, <a href="../due_date/DateValidatorUnion-class.html">DateValidatorUnion</a> or
-<a href="../due_date/DateValidatorDifference-class.html">DateValidatorDifference</a>.
+    Extension methods related to <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidator-class.html">DateValidator</a>s. Simply wrappers around
+creating <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorIntersection-class.html">DateValidatorIntersection</a>, <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorUnion-class.html">DateValidatorUnion</a> or
+<a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/DateValidatorDifference-class.html">DateValidatorDifference</a>.
 </dd>
 
 
         <dt id="DayInYear">
-    <span class="name "><a href="../due_date/DayInYear.html">DayInYear</a></span> 
+    <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions/DayInYear.html">DayInYear</a></span> 
 
 </dt>
 <dd>
-    Extension methods to get the day of the year of a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a>.
+    Extension methods to get the day of the year of a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a>.
 </dd>
 
 
         <dt id="EveryDateValidatorListExt">
-    <span class="name "><a href="../due_date/EveryDateValidatorListExt.html">EveryDateValidatorListExt</a></span> 
+    <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions/EveryDateValidatorListExt.html">EveryDateValidatorListExt</a></span> 
 
 </dt>
 <dd>
-    Extension methods related to <a href="../due_date/EveryDateValidator-class.html">EveryDateValidator</a>s. Simpply wrappers around
-creating <a href="../due_date/EveryDateValidatorIntersection-class.html">EveryDateValidatorIntersection</a>, <a href="../due_date/EveryDateValidatorUnion-class.html">EveryDateValidatorUnion</a> or
-<a href="../due_date/EveryDateValidatorDifference-class.html">EveryDateValidatorDifference</a>.
+    Extension methods related to <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidator-class.html">EveryDateValidator</a>s. Simply wrappers around
+creating <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidatorIntersection-class.html">EveryDateValidatorIntersection</a>, <a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidatorUnion-class.html">EveryDateValidatorUnion</a> or
+<a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/EveryDateValidatorDifference-class.html">EveryDateValidatorDifference</a>.
 </dd>
 
 
         <dt id="PreviousNext">
-    <span class="name "><a href="../due_date/PreviousNext.html">PreviousNext</a></span> 
+    <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions/PreviousNext.html">PreviousNext</a></span> 
 
 </dt>
 <dd>
-    Extension methods related to adding or subtracting one from an <a href="https://api.dart.dev/stable/3.1.3/dart-core/Iterable-class.html">Iterable</a> of
-<a href="../period/Weekday.html">Weekday</a>.
+    Extension methods related to adding or subtracting one from an <a href="https://api.dart.dev/stable/3.2.6/dart-core/Iterable-class.html">Iterable</a> of
+<a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_enums/Weekday.html">Weekday</a>.
 </dd>
 
 
         <dt id="WeekCalc">
-    <span class="name "><a href="../due_date/WeekCalc.html">WeekCalc</a></span> 
+    <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions/WeekCalc.html">WeekCalc</a></span> 
 
 </dt>
 <dd>
-    Extension methods related to weeks on a <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime-class.html">DateTime</a>.
+    Extension methods related to weeks on a <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime-class.html">DateTime</a>.
 </dd>
 
 
@@ -402,31 +414,31 @@ creating <a href="../due_date/EveryDateValidatorIntersection-class.html">EveryDa
 
       <dl>
         <dt id="Month">
-  <span class="name "><a href="../period/Month.html">Month</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_enums/Month.html">Month</a></span> 
 
 </dt>
 <dd>
-  Month constants that are returned by <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime/month.html">DateTime.month</a> method.
+  Month constants that are returned by <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime/month.html">DateTime.month</a> method.
 </dd>
 
         <dt id="Week">
-  <span class="name "><a href="../period/Week.html">Week</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_enums/Week.html">Week</a></span> 
 
 </dt>
 <dd>
-  Week occurences inside a month.
+  Week occurrences inside a month.
 </dd>
 
         <dt id="Weekday">
-  <span class="name "><a href="../period/Weekday.html">Weekday</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_enums/Weekday.html">Weekday</a></span> 
 
 </dt>
 <dd>
-  Weekday constants that are returned by <a href="https://api.dart.dev/stable/3.1.3/dart-core/DateTime/weekday.html">DateTime.weekday</a> method.
+  Weekday constants that are returned by <a href="https://api.dart.dev/stable/3.2.6/dart-core/DateTime/weekday.html">DateTime.weekday</a> method.
 </dd>
 
         <dt id="WeekdayOccurrence">
-  <span class="name "><a href="../due_date/WeekdayOccurrence.html">WeekdayOccurrence</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_enums/WeekdayOccurrence.html">WeekdayOccurrence</a></span> 
 
 </dt>
 <dd>
@@ -442,7 +454,7 @@ creating <a href="../due_date/EveryDateValidatorIntersection-class.html">EveryDa
 
       <dl>
         <dt id="DateTimeLimitReachedException">
-  <span class="name "><a href="../due_date/DateTimeLimitReachedException-class.html">DateTimeLimitReachedException</a></span> 
+  <span class="name "><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/DateTimeLimitReachedException-class.html">DateTimeLimitReachedException</a></span> 
 
 </dt>
 <dd>
@@ -471,8 +483,17 @@ creating <a href="../due_date/EveryDateValidatorIntersection-class.html">EveryDa
     <h5><span class="package-name">due_date</span> <span class="package-kind">package</span></h5>
     <ol>
       <li class="section-title">Libraries</li>
+      <li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_constants/file-___home_runner_work_due_date_2_due_date_2_lib_src_constants-library.html">constants</a></li>
+      <li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator-library.html">date_validator</a></li>
       <li><a href="../due_date/due_date-library.html">due_date</a></li>
+      <li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date/file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date-library.html">due_date</a></li>
+      <li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_enums/file-___home_runner_work_due_date_2_due_date_2_lib_src_enums-library.html">enums</a></li>
+      <li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every/file-___home_runner_work_due_date_2_due_date_2_lib_src_every-library.html">every</a></li>
+      <li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_every_modifier/file-___home_runner_work_due_date_2_due_date_2_lib_src_every_modifier-library.html">every_modifier</a></li>
+      <li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions/file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions-library.html">extensions</a></li>
       <li><a href="../period/period-library.html">period</a></li>
+      <li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_period/file-___home_runner_work_due_date_2_due_date_2_lib_src_period-library.html">period</a></li>
+      <li><a href="../file-___home_runner_work_due_date_2_due_date_2_lib_src_period_generator/file-___home_runner_work_due_date_2_due_date_2_lib_src_period_generator-library.html">period_generator</a></li>
 </ol>
 
   </div>
@@ -486,7 +507,7 @@ creating <a href="../due_date/EveryDateValidatorIntersection-class.html">EveryDa
 <footer>
   <span class="no-break">
     due_date
-      2.0.0
+      2.0.2+10
   </span>
 
   
