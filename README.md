@@ -2,7 +2,7 @@
 
 [![pub package](https://img.shields.io/pub/v/due_date.svg)](https://pub.dev/packages/due_date)
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/FMorschel/due_date/main/LICENSE)
-<!--- Prepare for future badges when the package is more mature and has more users 
+<!--- Prepare for future badges when the package is more mature and has more users
 <a href="https://pub.dev/packages/due_date"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/FMorschel/due_date"></a>
 <a href="https://github.com/FMorschel/due_date/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/FMorschel/due_date"></a>
 <a href="https://githubc.com/FMorschel/due_date/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/FMorschel/due_date" alt="GitHub closed issues"></a>
@@ -76,7 +76,7 @@ On your `pubspec.yaml` file, add this package to your dependencies:
 
 ```yaml
   dependencies:
-    due_date: ^2.0.2+9
+    due_date: ^2.0.2+7
 ```
 
 Import one of the, or both, package libraries on your code:
