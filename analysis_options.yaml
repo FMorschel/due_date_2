@@ -15,7 +15,7 @@ analyzer:
 dart_code_metrics:
   rules:
     - double-literal-format
-    - format-comment
+    #- format-comment
     - member-ordering-extended:
         alphabetize: false
         order:

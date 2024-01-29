@@ -1,5 +1,9 @@
 # Change Log
 
+## 2.0.2+6 - 2023.12.19
+
+- Simple test
+
 ## 2.0.2+5 - 2023.12.19
 
 - Simple test
