@@ -60,16 +60,6 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Dart tests should pass
-echo "Running Dart tests..."
-dart test . 1>/dev/null
-# Print files that failed tests
-if [ $? -ne 0 ]; then
-	echo "Dart tests failed."
-	echo "Please run 'dart test' in the project root."
-	exit 1
-fi
-
 # Dart fix --apply then any changed files should be added to the commit
 echo "Running Dart fix..."
 dart fix --apply .
@@ -79,6 +69,16 @@ git add .
 echo "Running Dart format..."
 dart format .
 git add .
+
+# Dart tests should pass
+echo "Running Dart tests..."
+dart test . 1>/dev/null
+# Print files that failed tests
+if [ $? -ne 0 ]; then
+	echo "Dart tests failed."
+	echo "Please run 'dart test' in the project root."
+	exit 1
+fi
 
 # return 0 to indicate that everything went well
 echo "Pre-commit checks passed."
