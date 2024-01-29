@@ -32,7 +32,7 @@ jobs:
         run: dart test --coverage coverage --reporter=github
 
       - name: Coverage
-        run: dart run coverage:format_coverage -l -i ./coverage/test/due_date_test.dart.vm.json -o ./coverage/lcov.info
+        run: dart run coverage:format_coverage -l -i ./coverage/ -o ./coverage/lcov.info
 
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v3
