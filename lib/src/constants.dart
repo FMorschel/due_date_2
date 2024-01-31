@@ -4,7 +4,9 @@ import '../due_date.dart';
 /// For every one one of the everies that is a [LimitedEvery], the limit
 /// will be passed.
 class LimitedOrEveryHandler {
-  const LimitedOrEveryHandler._(); //coverage:ignore-line
+  // coverage:ignore-start
+  const LimitedOrEveryHandler._();
+  // coverage:ignore-end
 
   /// Returns the start date considering the given [every] base process.
   /// If [every] is a [LimitedEvery], the [limit] will be passed on.
