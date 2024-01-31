@@ -4,6 +4,13 @@ on:
   pull_request:
     branches:
       - release
+    paths:
+      - 'lib/**'
+      - 'test/**'
+      - 'pubspec.yaml'
+      - 'CHANGELOG.md'
+      - 'README.md'
+      - '.github/workflows/verify-version.yml'
 
 jobs:
   verify_version:

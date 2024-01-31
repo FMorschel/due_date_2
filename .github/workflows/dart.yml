@@ -4,10 +4,20 @@ on:
   push:
     branches: 
       - main
+    paths:
+      - 'lib/**'
+      - 'test/**'
+      - 'pubspec.yaml'
+      - '.github/workflows/dart.yml'
   pull_request:
     branches: 
       - main
       - release
+    paths:
+      - 'lib/**'
+      - 'test/**'
+      - 'pubspec.yaml'
+      - '.github/workflows/dart.yml'
 
 jobs:
   dart-ci:
