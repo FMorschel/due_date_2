@@ -30,7 +30,7 @@ jobs:
         git tag -a ${{ github.event.pull_request.head.ref }} -m "${{ github.event.pull_request.body }}"
         git push origin ${{ github.event.pull_request.head.ref }}
 
-  reopen_pr:
+  notify_failure:
     needs: create_release_and_tag
     if: failure()
     runs-on: ubuntu-latest
@@ -38,27 +38,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: 'release'
           fetch-depth: 0
 
-      - name: Revert Merge Commit
-        run: |
-          # Get the name and email of the last committer
-          last_committer_name=$(git log -1 --pretty=format:'%an')
-          last_committer_email=$(git log -1 --pretty=format:'%ae')
+      - name: Get last committer email
+        id: last_committer
+        run: echo "::set-output name=email::$(git log -1 --pretty=format:'%ae')"
 
-          # Set the local Git config
-          git config --local user.name "$last_committer_name"
-          git config --local user.email "$last_committer_email"
-
-          git revert -m 1 HEAD
-          git push --force origin HEAD:revert-${{ github.run_number }}
-
-      - name: Create PR
-        uses: repo-sync/pull-request@v2
+      - name: Send failure email
+        uses: dawidd6/action-send-mail@v3
         with:
-          source_branch: "revert-${{ github.run_number }}"
-          destination_branch: "release"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_title: "Revert failed update"
-          pr_body: "This PR reverts the changes made in PR #${{ github.event.pull_request.number }} due to a failure in the update_docs_new_version job."
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: GitHub Actions
+          subject: Failed GitHub Actions run
+          to: ${{ steps.last_committer.outputs.email }}
+          body: |
+            The update_pages job in the workflow run has failed. Check the logs for details.
+
+            Repository: ${{ github.repository }}
+            Workflow: ${{ github.workflow }}
+            Run ID: ${{ github.run_id }}
+            Event: ${{ github.event_name }}
