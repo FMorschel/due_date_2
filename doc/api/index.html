@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="generator" content="made with love by dartdoc 7.0.0-dev">
+  <meta name="generator" content="made with love by dartdoc 7.0.1-wip">
   <meta name="description" content="due_date API docs, for the Dart programming language.">
   <title>due_date - Dart API docs</title>
 
@@ -53,6 +53,18 @@
       
 <section class="desc markdown">
   <h1 id="duedate">DueDate</h1>
+<p><a href="https://pub.dev/packages/due_date"><img src="https://img.shields.io/pub/v/due_date.svg" alt="pub package"></a>
+<a href="https://raw.githubusercontent.com/FMorschel/due_date/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub License"></a></p>
+<!--- Prepare for future badges when the package is more mature and has more users
+<a href="https://pub.dev/packages/due_date"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/FMorschel/due_date"></a>
+<a href="https://github.com/FMorschel/due_date/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/FMorschel/due_date"></a>
+<a href="https://githubc.com/FMorschel/due_date/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/FMorschel/due_date" alt="GitHub closed issues"></a>
+[![GitHub Forks](https://img.shields.io/github/forks/FMorschel/due_date.svg)](https://github.com/FMorschel/due_date/network)
+--->
+<p><a href="https://github.com/sponsors/FMorschel"><img src="https://img.shields.io/github/sponsors/FMorschel" alt="GitHub Sponsors"></a>
+<span class="badge-buymeacoffee">
+<a href="https://www.buymeacoffee.com/fmorschel" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button"></a>
+</span></p>
 <p>A package for working with repeating <code>DateTime</code> patterns.</p>
 <p>Ever wanted to create a new <code>DateTime</code> with, let's say, the same day in month? But the day is 31 and next month only has 30, so you go to 30 and the next day is lost because then you have no variable to save the original's month day? With <code>DueDateTime</code> this managing is done for you without any headaches.</p>
 <p>Or maybe you have to check if some <code>DateTime</code> is inside a certain period of time and always have to manually get, let's say, the start and end of the week and process it yourself. Now you can use <code>PeriodGenerator</code>s and <code>Period</code> methods to work it out for you.</p>
@@ -99,7 +111,7 @@ print('The previous second is $previousSecond.');
 <h2 id="getting-started">Getting started</h2>
 <p>On your <code>pubspec.yaml</code> file, add this package to your dependencies:</p>
 <pre class="language-yaml"><code class="language-yaml">  dependencies:
-    due_date: ^2.0.0
+    due_date: ^2.0.2+14
 </code></pre>
 <p>Import one of the, or both, package libraries on your code:</p>
 <pre class="language-dart"><code class="language-dart">import 'package:due_date/due_date.dart';
@@ -115,14 +127,60 @@ dueDate = dueDate.next; // 2022-03-31
 <h2 id="additional-information">Additional information</h2>
 <p>See the API docs <a href="https://fmorschel.github.io/due_date/">here</a>.</p>
 <p>Find more information at <a href="https://github.com/FMorschel/due_date">github.com/FMorschel/due_date</a>.</p>
-<p>Contibute to the package by creating a PR at <a href="https://github.com/FMorschel/due_date/pulls">github.com/FMorschel/due_date/pulls</a>.</p>
+<p>Contribute to the package by creating a PR at <a href="https://github.com/FMorschel/due_date/pulls">github.com/FMorschel/due_date/pulls</a>.</p>
 <p>File issues at <a href="https://github.com/FMorschel/due_date/issues">github.com/FMorschel/due_date/issues</a>.</p>
+<p>Discuss related topics at <a href="https://github.com/FMorschel/due_date/discussions">github.com/FMorschel/due_date/discussions</a>.</p>
+<h2 id="alternativesinspiration">Alternatives/Inspiration</h2>
+<ul>
+<li>
+<p><a href="https://pub.dev/packages/time">pub.dev -&gt; time</a></p>
+<ul>
+<li>Made me start thinking about this package and how I could improve it with issues and discussions on the GitHub repo.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://api.flutter.dev/flutter/material/DateUtils-class.html">DateUtils -&gt; Flutter</a></p>
+<ul>
+<li>Inspired me to create the <code>Period</code> class and its methods. As well as some <code>Every</code> classes.</li>
+</ul>
+</li>
+</ul>
+<h2 id="what-makes-this-different">What makes this different</h2>
+<p>This package is focused on working with <code>DateTime</code> objects and their patterns. It is not a calendar package, but it can be used to create one.
+It is also not a package to work with timezones. It is focused on the <code>DateTime</code> object itself. It does not have any timezone related methods. For that, you may want to check out the <a href="https://pub.dev/packages/timezone">timezone</a> package.</p>
+<p>This is not a package to work with <code>Duration</code> objects. It is focused on <code>DateTime</code> objects and their patterns. For that, you may want to check out the <a href="https://pub.dev/packages/time">time</a> package.</p>
+<p>This package is not a package to work with <code>DateTime</code> objects and their formatting. It is focused on <code>DateTime</code> objects and their patterns. For that, you may want to check out the <a href="https://pub.dev/packages/intl">intl</a> package.</p>
+<p>This package is not intended to be a replacement for the <code>DateTime</code> class. It is intended to be a complement to it.</p>
+<p>The <a href="https://pub.dev/packages/time">time</a> package is a great package to work with <code>Duration</code> and <code>DateTime</code> objects. It uses extension methods to add functionality to the <code>DateTime</code> class. This package is not intended to be a replacement for the <code>time</code> package. It is intended to be a complement to it.</p>
+<h2 id="license">License</h2>
+<p>This package is licensed under the MIT license. See the <a href="https://pub.dev/packages/due_date/license">LICENSE</a> file for details.</p>
 </section>
 
 
       <section class="summary">
           <h2>Libraries</h2>
         <dl>
+          <dt id="constants">
+  <span class="name"><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_constants/file-___home_runner_work_due_date_2_due_date_2_lib_src_constants-library.html">constants</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="date_validator">
+  <span class="name"><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator-library.html">date_validator</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="due_date">
+  <span class="name"><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date/file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date-library.html">due_date</a></span> 
+
+</dt>
+<dd>
+</dd>
+
           <dt id="due_date">
   <span class="name"><a href="due_date/due_date-library.html">due_date</a></span> 
 
@@ -130,11 +188,53 @@ dueDate = dueDate.next; // 2022-03-31
 <dd>Support for creating your own custom due dates.
 </dd>
 
+          <dt id="enums">
+  <span class="name"><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_enums/file-___home_runner_work_due_date_2_due_date_2_lib_src_enums-library.html">enums</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="every">
+  <span class="name"><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_every/file-___home_runner_work_due_date_2_due_date_2_lib_src_every-library.html">every</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="every_modifier">
+  <span class="name"><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_every_modifier/file-___home_runner_work_due_date_2_due_date_2_lib_src_every_modifier-library.html">every_modifier</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="extensions">
+  <span class="name"><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions/file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions-library.html">extensions</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="period">
+  <span class="name"><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_period/file-___home_runner_work_due_date_2_due_date_2_lib_src_period-library.html">period</a></span> 
+
+</dt>
+<dd>
+</dd>
+
           <dt id="period">
   <span class="name"><a href="period/period-library.html">period</a></span> 
 
 </dt>
 <dd>Support for creating your own custom periods.
+</dd>
+
+          <dt id="period_generator">
+  <span class="name"><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_period_generator/file-___home_runner_work_due_date_2_due_date_2_lib_src_period_generator-library.html">period_generator</a></span> 
+
+</dt>
+<dd>
 </dd>
 
         </dl>
@@ -158,8 +258,17 @@ dueDate = dueDate.next; // 2022-03-31
     <h5 class="hidden-xs"><span class="package-name">due_date</span> <span class="package-kind">package</span></h5>
     <ol>
       <li class="section-title">Libraries</li>
+      <li><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_constants/file-___home_runner_work_due_date_2_due_date_2_lib_src_constants-library.html">constants</a></li>
+      <li><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator/file-___home_runner_work_due_date_2_due_date_2_lib_src_date_validator-library.html">date_validator</a></li>
+      <li><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date/file-___home_runner_work_due_date_2_due_date_2_lib_src_due_date-library.html">due_date</a></li>
       <li><a href="due_date/due_date-library.html">due_date</a></li>
+      <li><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_enums/file-___home_runner_work_due_date_2_due_date_2_lib_src_enums-library.html">enums</a></li>
+      <li><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_every/file-___home_runner_work_due_date_2_due_date_2_lib_src_every-library.html">every</a></li>
+      <li><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_every_modifier/file-___home_runner_work_due_date_2_due_date_2_lib_src_every_modifier-library.html">every_modifier</a></li>
+      <li><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions/file-___home_runner_work_due_date_2_due_date_2_lib_src_extensions-library.html">extensions</a></li>
+      <li><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_period/file-___home_runner_work_due_date_2_due_date_2_lib_src_period-library.html">period</a></li>
       <li><a href="period/period-library.html">period</a></li>
+      <li><a href="file-___home_runner_work_due_date_2_due_date_2_lib_src_period_generator/file-___home_runner_work_due_date_2_due_date_2_lib_src_period_generator-library.html">period_generator</a></li>
 </ol>
 
   </div>
@@ -172,7 +281,7 @@ dueDate = dueDate.next; // 2022-03-31
 <footer>
   <span class="no-break">
     due_date
-      2.0.0
+      2.0.2+14
   </span>
 
   
