@@ -13,6 +13,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      with:
+        persist-credentials: false
 
     - name: Set up Dart
       uses: dart-lang/setup-dart@v1
@@ -64,12 +66,10 @@ jobs:
         dart doc
 
         # Get the name and email of the last committer
-        last_committer_name=$(git log -1 --pretty=format:'%an')
-        last_committer_email=$(git log -1 --pretty=format:'%ae')
 
         # Set the local Git config
-        git config --local user.name "$last_committer_name"
-        git config --local user.email "$last_committer_email"
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "tick.opal5550@eagereverest.com"
 
         # Create a unique branch name using the current timestamp
         branch_name="temp-branch-$(date +%s)"
