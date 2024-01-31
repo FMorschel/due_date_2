@@ -8,6 +8,10 @@ on:
     branches: 
       - main
       - release
+      - 'lib/**'
+      - 'test/**'
+      - 'pubspec.yaml'
+      - '.github/workflows/dart.yml'
 
 jobs:
   dart-ci:
